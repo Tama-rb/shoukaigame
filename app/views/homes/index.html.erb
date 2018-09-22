@@ -1,0 +1,32 @@
+<div class="container">
+<hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_with(url: result_conjunctions_path, local:true) do |f| %>
+        <%= f.submit "接続詞にする", class: "btn btn-default btn-lg btn-block" %>
+      <% end %>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_with(url: result_questions_path, local:true) do |f| %>
+        <%= f.submit "質問にする", class: "btn btn-default btn-lg btn-block" %>
+      <% end %>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= form_with(url: result_themes_path, local:true) do |f| %>
+        <%= f.submit "テーマにする", class: "btn btn-default btn-lg btn-block" %>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <p class="asobikata">あそびかた</p>
+    <p class="asobikata">自己紹介がおわったらどれかボタンを押してね。</p>
+    <p class="asobikata">ひょうじされたテーマや質問にこたえてね！。</p>
+  </div>
+</div>

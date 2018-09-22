@@ -5,13 +5,13 @@
       <table>
         <thead>
           <tr>
-            <th>質問</th>
+            <th>テーマ</th>
           </tr>
         </thead>
         <tbody>
-          <% @questions.each do |question| %>
+          <% @themes.each do |theme| %>
             <tr>
-              <td><%= question.question %></td>
+              <td><%= theme.theme %></td>
             </tr>
           <% end %>
         </tbody>
