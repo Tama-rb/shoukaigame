@@ -1,5 +1,5 @@
 class ConjunctionsController < ApplicationController
-  before_action :set_conjunction, only: [:edit, :update, :destroy]
+  before_action :set_conjunction, only: [:destroy]
   def index
     @conjunctions = Conjunction.all
     @conjunction = Conjunction.new
@@ -27,17 +27,6 @@ class ConjunctionsController < ApplicationController
       redirect_to conjunctions_path
     else
       render :new
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @conjunction.update(conjunction_params)
-      redirect_to @conjunction
-    else
-      render :edit
     end
   end
 

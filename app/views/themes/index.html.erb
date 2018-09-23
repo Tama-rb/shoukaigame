@@ -1,17 +1,24 @@
 <div class="container">
 <hr>
   <div class="row">
+    <%= render 'form' %>
+  </div>
+  <div class="row">
     <div class="col-xs-12">
       <table>
         <thead>
           <tr>
             <th>テーマ</th>
+            <th>削除</th>
           </tr>
         </thead>
         <tbody>
           <% @themes.each do |theme| %>
             <tr>
               <td><%= theme.theme %></td>
+              <td>
+                <%= link_to "削除", theme, class: 'btn btn-default', method: :delete, data: { confirm: "本当に削除してよいですか？" } %>
+              </td>
             </tr>
           <% end %>
         </tbody>
