@@ -5,6 +5,8 @@ class VotesController < ApplicationController
   # GET /votes.json
   def index
     @votes = Vote.all
+    @questions = ImpressionQuestion.all
+    @answers = Answer.all
   end
 
   # GET /votes/1
@@ -15,6 +17,14 @@ class VotesController < ApplicationController
   # GET /votes/new
   def new
     @vote = Vote.new
+    @questions = ImpressionQuestion.all
+    @answers = Answer.all
+  end
+
+  def new2
+    @vote = Vote.new
+    @questions = ImpressionQuestion.all
+    @answers = Answer.all
   end
 
   # GET /votes/1/edit
@@ -25,7 +35,6 @@ class VotesController < ApplicationController
   # POST /votes.json
   def create
     @vote = Vote.new(vote_params)
-
     respond_to do |format|
       if @vote.save
         format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
@@ -69,6 +78,6 @@ class VotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vote_params
-      params.fetch(:vote, {})
+      params.require(:vote).permit(:answer, :question_id)
     end
 end

@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <h2><%= @questions[@count-1].question %></h2>
+    <%= form.hidden_field :question_id, value:@count %>
+
+    <table>
+      <% @answers.each do |a| %>
+      <tr>
+        <td><%= form.label(:answer, a.answer, value: a.answer) %></td>
+        <td><%= form.radio_button(:answer, a.answer) %></td>
+      </tr>
+      <% end %>
+    </table>
+
   <div class="actions">
     <%= form.submit %>
   </div>
