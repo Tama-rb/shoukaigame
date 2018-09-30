@@ -1,0 +1,2 @@
+class ImpressionQuestion < ApplicationRecord
+end
