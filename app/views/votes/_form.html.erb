@@ -14,14 +14,14 @@
   <h2><%= @questions[@count-1].question %></h2>
     <%= form.hidden_field :question_id, value:@count %>
 
-    <table>
-      <% @answers.each do |a| %>
+    <tbody>
+      <% @answers.each do |answer| %>
       <tr>
-        <td><%= form.label(:answer, a.answer, value: a.answer) %></td>
-        <td><%= form.radio_button(:answer, a.answer) %></td>
+        <td><%= form.label(:answer, answer.answer, value: answer.answer) %></td>
+        <td><%= form.radio_button(:answer, answer.answer) %></td>
       </tr>
       <% end %>
-    </table>
+    </tbody>
 
   <div class="actions">
     <%= form.submit %>
