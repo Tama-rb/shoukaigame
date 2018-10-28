@@ -6,7 +6,7 @@ class ThemesController < ApplicationController
   end
 
   def result
-    @result = Theme.select_a_word_at_random.theme
+    @theme = Theme.select_a_word_at_random
 
     render 'result'
   end
@@ -38,7 +38,7 @@ class ThemesController < ApplicationController
 
     def theme_params
       params.require(:theme).permit(
-        :theme
+        :content
       )
     end  
 end

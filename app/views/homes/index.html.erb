@@ -1,5 +1,19 @@
 <div class="container">
-<hr>
+  <div class="row">
+    <div class="col-xs-2">
+      登録数は・・・
+    </div>
+    <div class="col-xs-2">
+      <%= link_to "接続詞 : #{Conjunction.count} ", conjunctions_path %>
+    </div>
+    <div class="col-xs-2">
+      <%= link_to "質問 : #{Question.count} ", questions_path %>
+    </div>
+    <div class="col-xs-2">
+      <%= link_to "テーマ : #{Theme.count} ", themes_path %>
+    </div>
+  </div>
+  <hr>
   <div class="row">
     <div class="col-xs-12">
       <%= form_with(url: result_conjunctions_path, local:true) do |f| %>

@@ -8,14 +8,16 @@
       <table>
         <thead>
           <tr>
-            <th>接続詞</th>
+            <th width="200px">接続詞</th>
+            <th width="100px">表示回数</th>
             <th>削除</th>
           </tr>
         </thead>
         <tbody>
           <% @conjunctions.each do |conjunction| %>
             <tr>
-              <td><%= conjunction.conjunction %></td>
+              <td><%= conjunction.content %></td>
+              <td><%= conjunction.impressions %></td>
               <td>
                 <%= link_to "削除", conjunction, class: 'btn btn-default', method: :delete, data: { confirm: "本当に削除してよいですか？" } %>
               </td>

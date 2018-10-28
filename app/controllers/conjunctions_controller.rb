@@ -6,7 +6,7 @@ class ConjunctionsController < ApplicationController
   end
 
   def result
-    @result = Conjunction.select_a_word_at_random.conjunction
+    @conjunction = Conjunction.select_a_word_at_random
 
     render 'result'
   end
@@ -38,7 +38,7 @@ class ConjunctionsController < ApplicationController
 
     def conjunction_params
       params.require(:conjunction).permit(
-        :conjunction
+        :content
       )
-    end  
+    end
 end

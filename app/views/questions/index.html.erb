@@ -9,13 +9,15 @@
         <thead>
           <tr>
             <th>質問</th>
+            <th width="100px">表示回数</th>
             <th>削除</th>
           </tr>
         </thead>
         <tbody>
           <% @questions.each do |question| %>
             <tr>
-              <td><%= question.question %></td>
+              <td><%= question.content %></td>
+              <td><%= question.impressions%></td>
               <td>
                 <%= link_to "削除", question, class: 'btn btn-default', method: :delete, data: { confirm: "本当に削除してよいですか？" } %>
               </td>

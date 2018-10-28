@@ -9,13 +9,15 @@
         <thead>
           <tr>
             <th>テーマ</th>
+            <th>表示回数</th>
             <th>削除</th>
           </tr>
         </thead>
         <tbody>
           <% @themes.each do |theme| %>
             <tr>
-              <td><%= theme.theme %></td>
+              <td><%= theme.content %></td>
+              <td><%= theme.impressions %></td>
               <td>
                 <%= link_to "削除", theme, class: 'btn btn-default', method: :delete, data: { confirm: "本当に削除してよいですか？" } %>
               </td>
