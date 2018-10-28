@@ -10,27 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327052901) do
+ActiveRecord::Schema.define(version: 20181028092023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "conjunctions", force: :cascade do |t|
-    t.text "conjunction"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "impressions"
   end
 
   create_table "questions", force: :cascade do |t|
-    t.text "question"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "impressions"
   end
 
   create_table "themes", force: :cascade do |t|
-    t.text "theme"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "impressions"
   end
 
 end

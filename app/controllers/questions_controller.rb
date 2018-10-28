@@ -6,7 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def result
-    @result = Question.select_a_word_at_random.question
+    @question = Question.select_a_word_at_random
 
     render 'result'
   end
@@ -38,7 +38,7 @@ class QuestionsController < ApplicationController
 
     def question_params
       params.require(:question).permit(
-        :question
+        :content
       )
     end  
 end
