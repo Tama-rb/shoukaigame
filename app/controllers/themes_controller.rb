@@ -6,12 +6,7 @@ class ThemesController < ApplicationController
   end
 
   def result
-    random = Random.new
-    count = Theme.all.count
-
-    record_id = random.rand(1..count)
-
-    @result = Theme.find(record_id).theme
+    @result = Theme.select_a_word_at_random.theme
 
     render 'result'
   end

@@ -6,12 +6,7 @@ class QuestionsController < ApplicationController
   end
 
   def result
-    random = Random.new
-    count = Question.all.count
-
-    record_id = random.rand(1..count)
-
-    @result = Question.find(record_id).question
+    @result = Question.select_a_word_at_random.question
 
     render 'result'
   end

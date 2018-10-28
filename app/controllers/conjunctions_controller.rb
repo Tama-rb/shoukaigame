@@ -6,12 +6,7 @@ class ConjunctionsController < ApplicationController
   end
 
   def result
-    random = Random.new
-    count = Conjunction.all.count
-    
-    record_id = random.rand(1..count)
-
-    @result = Conjunction.find(record_id).conjunction
+    @result = Conjunction.select_a_word_at_random.conjunction
 
     render 'result'
   end
