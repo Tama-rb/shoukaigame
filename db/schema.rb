@@ -19,21 +19,21 @@ ActiveRecord::Schema.define(version: 20181028092023) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "impressions"
+    t.integer "impressions", default: 0
   end
 
   create_table "questions", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "impressions"
+    t.integer "impressions", default: 0
   end
 
   create_table "themes", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "impressions"
+    t.integer "impressions", default: 0
   end
 
 end

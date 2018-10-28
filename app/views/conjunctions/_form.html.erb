@@ -1,11 +1,11 @@
-      <%= form_for @conjunction do |f| %>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= f.text_field :conjunction, class: "form-control" %>
-          </div>
-          <div class="col-xs-2">
-            <%= f.submit "登録する", class: "btn btn-default btn-lg btn-block" %>
-          </div>
-        </div>
-      <% end %>
-      <hr/>
+<%= form_for @conjunction do |f| %>
+  <div class="row">
+    <div class="col-xs-6">
+      <%= f.text_field :content, class: "form-control" %>
+    </div>
+    <div class="col-xs-2">
+      <%= f.submit "登録する", class: "btn btn-default btn-lg btn-block" %>
+    </div>
+  </div>
+<% end %>
+<hr/>
