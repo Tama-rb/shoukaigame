@@ -6,20 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-conj_list = %w(そして 
-               だから
-               ちなみに 
-               厳密には 
-               ところで 
-               さて 
-               でも 
-               だと思ったら
-               これからは
-              )
+# conj_list = %w(そして 
+#                だから
+#                ちなみに 
+#                厳密には 
+#                ところで 
+#                さて 
+#                でも 
+#                だと思ったら
+#                これからは
+#               )
 
-conj_list.each do |conj|
-  Conjunction.create(conjunction: conj)
-end
+# conj_list.each do |conj|
+#   Conjunction.create(conjunction: conj)
+# end
 
 ques_list = %w(彼氏いますか？
                彼女いますか？
@@ -32,18 +32,18 @@ ques_list = %w(彼氏いますか？
                )
 
 ques_list.each do |ques|
-  Question.create(question: ques)
+  Question.create(content: ques, category: 1)
 end
 
-theme_list = %w(森友学園ついて
-                高齢化について
-                ブラック企業について
-                LGBTについて
-                )
+# theme_list = %w(森友学園ついて
+#                 高齢化について
+#                 ブラック企業について
+#                 LGBTについて
+#                 )
 
-theme_list.each do |theme|
-  Theme.create(theme: theme)
-end
+# theme_list.each do |theme|
+#   Theme.create(theme: theme)
+# end
 
 puts "接続詞 数:" + Conjunction.all.count.to_s
 puts "質問   数:" + Question.all.count.to_s
