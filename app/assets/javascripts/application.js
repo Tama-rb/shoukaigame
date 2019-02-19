@@ -28,30 +28,5 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() { 
-
-  offsetMob = $('#mob').offset();
-  x = offsetMob.left;
-  y = offsetMob.top;
-  console.log(x);
-  console.log(y);
-  
-
-  function keydown(event) {
-    $('#mob').css('position', 'fixed');
-    switch (event.keyCode) {
-      case 37: x -= 10; break;
-      case 38: y -= 10; break;
-      case 39: x += 10; break;
-      case 40: y += 10; break;
-    }
-
-    document.getElementById('mob').style.left = x + "px";
-    document.getElementById('mob').style.top = y + "px";
-  }
-
-  document.onkeydown = keydown;
-});
