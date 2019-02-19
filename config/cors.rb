@@ -9,7 +9,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     # Access-Control-Allow-Headers: (OPTIONS に対してのみ Access-Control-Request-Headers に書かれたものをそのまま返す)
     # Access-Control-Max-Age: 3600
     resource '/api/*',
-             :methods => [:get],
+             :methods => [:get, :post],
              :headers => :any,
              :max_age => 3600
   end

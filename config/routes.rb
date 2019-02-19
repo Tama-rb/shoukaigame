@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :questions, only: [] do
+      resources :questions, only: [:create] do
         get :random, on: :collection
       end
     end

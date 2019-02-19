@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-cloak>
     <div class="message -left">
       <i class="nes-bcrikko"></i>
       <div class="nes-balloon from-left">

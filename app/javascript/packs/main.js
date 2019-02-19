@@ -36,6 +36,7 @@
 import Vue from 'vue/dist/vue.esm'
 import Introduction from '../introduction.vue'
 import Buttons from '../buttons.vue'
+import Newitem from '../new_item.vue'
 
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
@@ -43,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     data: {
       message: "Can you say hello?"
     },
-    components: { Introduction, Buttons }
+    components: { Introduction, Buttons, Newitem }
   })
 })
 //

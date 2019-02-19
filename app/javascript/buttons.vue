@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div v-cloak>
       <div class="buttons">
-        <button type="button" class="nes-btn" @click="clickButton(conjunction)">{{ conjunction }}</button>
-        <button type="button" class="nes-btn" @click="clickButton(question)">{{ question }}</button>
-        <button type="button" class="nes-btn">{{ theme }}</button>
-        <button type="button" class="nes-btn">{{ programming }}</button>
+        <button type="button" class="nes-btn is-primary" @click="clickButton(conjunction)">{{ conjunction }}</button>
+        <button type="button" class="nes-btn is-error" @click="clickButton(question)">{{ question }}</button>
+        <button type="button" class="nes-btn is-white" @click="clickButton(theme)">{{ theme }}</button>
+        <button type="button" class="nes-btn is-warning" @click="clickButton(programming)">{{ programming }}</button>
       </div>
       <div class="result-container">
         <div v-if="isResult" class="result nes-container with-title is-centered">
@@ -48,15 +48,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
   .buttons {
     margin-bottom: 50px;
   }
+
   .result-container {
     margin: 20 0;
+
+    margin-bottom: 50px;
 
     .content {
       font-size: 30px;
     }
+  }
+
+  [v-cloak] {
+    display: none;
   }
 </style>
