@@ -4190,6 +4190,11 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha512-MFh0d/Wa7vkKO3Y3LlacqAEeHK0mckVqzDieUKTT+KGxi+zIpeVsFxymkIiRpbpDziHc290Xr9A1O4Om7otoRA==
 
+nes.css@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/nes.css/-/nes.css-2.0.0.tgz#d552c70c44bab13acece491c8078ced1b3a85537"
+  integrity sha512-F8A7gfZ+cGwJTeBmKplBg1REIfV0bzrnJBeuR1LDVuOC6y8nFs0eKtjijXZTxLPaaeDJnPwyD1QSkC0Bl1Y71w==
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
