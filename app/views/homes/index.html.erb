@@ -1,48 +1,8 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-2">
-      登録数は・・・
-    </div>
-    <div class="col-xs-2">
-      <%= link_to "接続詞 : #{Conjunction.count} ", conjunctions_path %>
-    </div>
-    <div class="col-xs-2">
-      <%= link_to "質問 : #{Question.count} ", questions_path %>
-    </div>
-    <div class="col-xs-2">
-      <%= link_to "テーマ : #{Theme.count} ", themes_path %>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= form_with(url: result_conjunctions_path, local:true) do |f| %>
-        <%= f.submit "接続詞にする", class: "btn btn-default btn-lg btn-block" %>
-      <% end %>
-    </div>
-  </div>
-  <br/>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= form_with(url: result_questions_path, local:true) do |f| %>
-        <%= f.submit "質問にする", class: "btn btn-default btn-lg btn-block" %>
-      <% end %>
-    </div>
-  </div>
-  <br/>
-  <div class="row">
-    <div class="col-xs-12">
-      <%= form_with(url: result_themes_path, local:true) do |f| %>
-        <%= f.submit "テーマにする", class: "btn btn-default btn-lg btn-block" %>
-      <% end %>
-    </div>
-  </div>
-  <hr>
-  <div class="row">
-    <p class="asobikata">あそびかた</p>
-    <p class="asobikata">自己紹介がおわったらどれかボタンを押してね。</p>
-    <p class="asobikata">ひょうじされたテーマや質問にこたえてね！。</p>
-  </div>
+<section>
+<div id='app'>
+  <introduction></introduction>
+  <Buttons></Buttons>
 </div>
-
-<%= javascript_pack_tag "hello_vue" %>
+</section>
+<%= javascript_pack_tag "main" %>
+<%= stylesheet_pack_tag "main" %>
