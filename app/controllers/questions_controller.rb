@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:destroy]
+  before_action :set_question, only: %i[destroy]
   def index
     @questions = Question.all
   end
@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
   def result
     @question = Question.select_a_word_at_random
 
-    render 'result'
+    render :result
   end
 
   def new
@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to questions_path
+      redirect_to questions_url
     else
       render :new
     end
@@ -36,8 +36,6 @@ class QuestionsController < ApplicationController
     end  
 
     def question_params
-      params.require(:question).permit(
-        :content
-      )
+      params.require(:question).permit(:content)
     end  
 end

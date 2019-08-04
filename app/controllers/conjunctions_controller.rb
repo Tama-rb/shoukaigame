@@ -1,5 +1,5 @@
 class ConjunctionsController < ApplicationController
-  before_action :set_conjunction, only: [:destroy]
+  before_action :set_conjunction, only: %i[destroy]
   def index
     @conjunctions = Conjunction.all
   end
@@ -18,7 +18,7 @@ class ConjunctionsController < ApplicationController
     @conjunction = Conjunction.new(conjunction_params)
 
     if @conjunction.save
-      redirect_to conjunctions_path
+      redirect_to conjunctions_url
     else
       render :new
     end
@@ -36,8 +36,6 @@ class ConjunctionsController < ApplicationController
     end  
 
     def conjunction_params
-      params.require(:conjunction).permit(
-        :content
-      )
+      params.require(:conjunction).permit(:content)
     end
 end
