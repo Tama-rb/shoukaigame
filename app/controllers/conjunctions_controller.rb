@@ -2,7 +2,6 @@ class ConjunctionsController < ApplicationController
   before_action :set_conjunction, only: [:destroy]
   def index
     @conjunctions = Conjunction.all
-    @conjunction = Conjunction.new
   end
 
   def result

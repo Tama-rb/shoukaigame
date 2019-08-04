@@ -2,7 +2,6 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:destroy]
   def index
     @questions = Question.all
-    @question = Question.new
   end
 
   def result

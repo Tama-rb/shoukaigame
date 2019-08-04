@@ -2,7 +2,6 @@ class ThemesController < ApplicationController
   before_action :set_theme, only: [:destroy]
   def index
     @themes = Theme.all
-    @theme = Theme.new
   end
 
   def result
