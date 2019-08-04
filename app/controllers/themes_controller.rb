@@ -1,8 +1,7 @@
 class ThemesController < ApplicationController
-  before_action :set_theme, only: [:destroy]
+  before_action :set_theme, only: %i[destroy]
   def index
     @themes = Theme.all
-    @theme = Theme.new
   end
 
   def result
@@ -19,7 +18,7 @@ class ThemesController < ApplicationController
     @theme = Theme.new(theme_params)
 
     if @theme.save
-      redirect_to themes_path
+      redirect_to themes_url
     else
       render :new
     end
@@ -37,8 +36,6 @@ class ThemesController < ApplicationController
     end  
 
     def theme_params
-      params.require(:theme).permit(
-        :content
-      )
+      params.require(:theme).permit(:content)
     end  
 end

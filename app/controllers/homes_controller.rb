@@ -1,7 +1,5 @@
 class HomesController < ApplicationController
   def index
-    @conjunction = Conjunction.new
-    @question = Question.new
-    @theme = Theme.new
-  end  
+    # NOTE: TOP画面を表示するためだけのアクションなので値のセットは不要
+  end
 end
