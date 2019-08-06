@@ -14,7 +14,7 @@ class Api::V1::QuestionsController < ApplicationController
     if @question.save
       render json: { result: "success" }
     else
-      render json: { result: "failed", error: @question.errors.full_messages  }
+      render json: { result: "failed", error: @question.errors.full_messages }
     end
   end
 
@@ -23,5 +23,4 @@ class Api::V1::QuestionsController < ApplicationController
   def question_params
     params.require(:params).permit(:category, :content)
   end
-
 end

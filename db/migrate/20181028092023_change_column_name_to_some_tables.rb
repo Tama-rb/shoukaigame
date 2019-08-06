@@ -7,7 +7,6 @@ class ChangeColumnNameToSomeTables < ActiveRecord::Migration[5.1]
     add_column :conjunctions, :impressions, :integer, default: 0
     add_column :questions, :impressions, :integer, default: 0
     add_column :themes, :impressions, :integer, default: 0
-
   end
 
   def down
