@@ -46,6 +46,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'rubocop', require: false
 end
 
 group :development do
