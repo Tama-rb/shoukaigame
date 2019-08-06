@@ -31,11 +31,11 @@ class QuestionsController < ApplicationController
 
   private
 
-    def set_question
-      @question = Question.find(params[:id])
-    end  
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
-    def question_params
-      params.require(:question).permit(:content)
-    end  
+  def question_params
+    params.require(:question).permit(:content)
+  end
 end

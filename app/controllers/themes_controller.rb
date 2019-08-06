@@ -31,11 +31,11 @@ class ThemesController < ApplicationController
 
   private
 
-    def set_theme
-      @theme = Theme.find(params[:id])
-    end  
+  def set_theme
+    @theme = Theme.find(params[:id])
+  end
 
-    def theme_params
-      params.require(:theme).permit(:content)
-    end  
+  def theme_params
+    params.require(:theme).permit(:content)
+  end
 end

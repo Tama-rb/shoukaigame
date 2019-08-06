@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'homes#index'
 
   resources :conjunctions do
-    post :result, on: :collection 
+    post :result, on: :collection
   end
 
   resources :questions do

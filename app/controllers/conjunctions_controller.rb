@@ -31,11 +31,11 @@ class ConjunctionsController < ApplicationController
 
   private
 
-    def set_conjunction
-      @conjunction = Conjunction.find(params[:id])
-    end  
+  def set_conjunction
+    @conjunction = Conjunction.find(params[:id])
+  end
 
-    def conjunction_params
-      params.require(:conjunction).permit(:content)
-    end
+  def conjunction_params
+    params.require(:conjunction).permit(:content)
+  end
 end
