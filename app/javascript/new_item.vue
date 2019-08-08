@@ -22,8 +22,6 @@
         <button @click="add" v-bind:disabled="clicked" class="nes-btn is-primary">Add</button>
       </form>
       <br>
-      <p>Debug</p>
-      <pre>{{ $data }}</pre>
     </div>
 
     <dialog class="nes-dialog" id="dialog-default">
