@@ -32,3 +32,7 @@ services:
     environment:
       - "POSTGRES_USER=postgres"
       - "POSTGRES_PASSWORD=shoukaigame_password"
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+volumes:
+  pgsql-data:
