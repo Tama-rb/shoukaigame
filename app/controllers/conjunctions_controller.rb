@@ -6,8 +6,7 @@ class ConjunctionsController < ApplicationController
 
   def result
     @conjunction = Conjunction.select_a_word_at_random
-
-    render 'result'
+    render :result
   end
 
   def new

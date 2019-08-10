@@ -6,8 +6,7 @@ class ThemesController < ApplicationController
 
   def result
     @theme = Theme.select_a_word_at_random
-
-    render 'result'
+    render :result
   end
 
   def new
