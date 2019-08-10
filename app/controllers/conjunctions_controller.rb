@@ -24,7 +24,7 @@ class ConjunctionsController < ApplicationController
   end
 
   def destroy
-    @conjunction.destroy
+    @conjunction.destroy!
     redirect_to conjunctions_url
   end
 

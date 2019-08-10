@@ -24,7 +24,7 @@ class ThemesController < ApplicationController
   end
 
   def destroy
-    @theme.destroy
+    @theme.destroy!
     redirect_to themes_url
   end
 
