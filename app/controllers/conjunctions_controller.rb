@@ -5,7 +5,7 @@ class ConjunctionsController < ApplicationController
   end
 
   def result
-    @conjunction = Conjunction.select_a_word_at_random
+    @conjunction = Conjunction.pick_up_at_random
     render :result
   end
 

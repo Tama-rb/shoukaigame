@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def result
-    @question = Question.select_a_word_at_random
+    @question = Question.pick_up_at_random
     render :result
   end
 
