@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - run: gem install bundler -v 1.17.2
-      - run: bundle install --path vendor/bundle
+      - run: bundle install
       - persist_to_workspace:
           root: ~/shoukaigame_app
           paths:
@@ -38,7 +38,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --jobs=4 --retry=3
       - run:
           name: Run Rubocop
           command: bundle exec rubocop --parallel
@@ -50,7 +50,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --jobs=4 --retry=3
       # Database setup
       - run:
           name: Database setup
