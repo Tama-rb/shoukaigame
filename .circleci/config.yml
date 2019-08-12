@@ -4,9 +4,10 @@
 #
 version: 2
 defaults: &defaults
+  working_directory: ~/shoukaigame_app
   docker:
     # specify the version you desire here
-    - image: ruby:2.6.3
+    - image: circleci/ruby:2.6.3-node-browsers-legacy
       environment:
         RAILS_ENV: test
         TZ: /usr/share/zoneinfo/Asia/Tokyo
@@ -14,23 +15,16 @@ defaults: &defaults
         BUNDLER_VERSION: 1.17.2
     - image: postgres:11.1-alpine
       environment:
-        - POSTGRES_USER: vimmer
-        - POSTGRES_PASSWORD: shoukaigame
+        - POSTGRES_USER: postgres
+        - POSTGRES_PASSWORD: shoukaigame_password
         - PGDATA: /dev/shm/pgdata/data
-  working_directory: ~/shoukaigame_app
 jobs:
   build:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          key: shoukaigame-app-gemfile-{{ checksum "Gemfile.lock" }}
       - run: gem install bundler -v 1.17.2
-      - run: bundle install
-      - save_cache:
-          key: shoukaigame-app-gemfile-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
+      - run: bundle install --path vendor/bundle
       - persist_to_workspace:
           root: ~/shoukaigame_app
           paths:
@@ -42,6 +36,10 @@ jobs:
       - attach_workspace:
           at: ~/shoukaigame_app
       - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - run:
           name: Run Rubocop
           command: bundle exec rubocop --parallel
   rspec:
@@ -49,6 +47,17 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/shoukaigame_app
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      # Database setup
+      - run:
+          name: Database setup
+          command: |
+            bundle exec rake db:drop
+            bundle exec rake db:create RAILS_ENV=test
+            bundle exec rake db:schema:load RAILS_ENV=test
       - run:
           name: Run RSpec
           command: |
