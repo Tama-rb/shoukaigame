@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   end
 
   def result
-    @question = Question.pick_up_at_random
+    @question = Question.pluck_a_record_from_all_or_offset
     render :result
   end
 

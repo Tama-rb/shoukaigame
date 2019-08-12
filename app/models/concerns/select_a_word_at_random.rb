@@ -4,11 +4,10 @@ module SelectAWordAtRandom
   module ClassMethods
     OFFSET = 1
     def pick_up_at_random(default = 0)
-      binding.pry
       offset(rand(self.count - default)).first
     end
 
-    def sample_other_than_latest
+    def pluck_a_record_from_all_or_offset
       return pick_up_at_random if count.zero?
 
       pick_up_at_random(OFFSET)
