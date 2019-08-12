@@ -1,3 +1,3 @@
 class Theme < ApplicationRecord
-  include SelectAWordAtRandom
+  include ThemeSelector
 end

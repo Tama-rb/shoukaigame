@@ -1,4 +1,4 @@
-module SelectAWordAtRandom
+module ThemeSelector
   extend ActiveSupport::Concern
 
   module ClassMethods
