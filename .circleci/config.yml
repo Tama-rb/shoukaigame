@@ -55,7 +55,6 @@ jobs:
       - run:
           name: Database setup
           command: |
-            bundle exec rake db:drop
             bundle exec rake db:create RAILS_ENV=test
             bundle exec rake db:schema:load RAILS_ENV=test
       - run:
