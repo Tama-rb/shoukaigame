@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
 
   def result
     @question = Question.select_a_word_at_random
-
     render :result
   end
 
@@ -25,7 +24,7 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question.destroy
+    @question.destroy!
     redirect_to questions_url
   end
 

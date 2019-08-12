@@ -6,8 +6,7 @@ class ConjunctionsController < ApplicationController
 
   def result
     @conjunction = Conjunction.select_a_word_at_random
-
-    render 'result'
+    render :result
   end
 
   def new
@@ -25,7 +24,7 @@ class ConjunctionsController < ApplicationController
   end
 
   def destroy
-    @conjunction.destroy
+    @conjunction.destroy!
     redirect_to conjunctions_url
   end
 
