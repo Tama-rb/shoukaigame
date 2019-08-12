@@ -1,3 +1,3 @@
 class Conjunction < ApplicationRecord
-  include SelectAWordAtRandom
+  include ThemeSelector
 end

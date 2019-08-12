@@ -5,7 +5,7 @@ class ThemesController < ApplicationController
   end
 
   def result
-    @theme = Theme.select_a_word_at_random
+    @theme = Theme.pluck_a_theme_from_all_or_offset
     render :result
   end
 
