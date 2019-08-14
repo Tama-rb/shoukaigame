@@ -1,6 +1,4 @@
 class Question < ApplicationRecord
-  include ThemeSelector
-
   enum category: { conjunction: 0, question: 1, theme: 2, programming: 3 }
 
   validates :content, uniqueness: true
